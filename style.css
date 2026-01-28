@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ================== PALETA ================== */
+:root {
+    --color-1: #000;
+    --color-2: #9D9D9D;
+    --color-3: #59390A;
+    --color-4: #2D1D06;
+    --color-5: #FFE76D;
+}
+
+/* ================== RESET ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* ================== BODY ================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-4);
+}
+
+/* ================== GENERAL ================== */
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ================== HEADER ================== */
+.header {
+    position: relative;
+    background-image: url(img/2do\ logotipo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    overflow: hidden;
+}
+
+/* Blur SOLO fondo */
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px);
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+/* ================== MENU ================== */
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 50px;
+    z-index: 3;
+}
+
+.logo {
+    color: var(--color-5);
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.menu .navbar ul li {
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: var(--color-5);
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: white;
+}
+
+/* ================== BOTONES ARRIBA ================== */
+.header-buttons {
+    position: absolute;
+    top: 90px;
+    right: 50px;
+
+    display: flex;
+    gap: 15px;
+    z-index: 3;
+}
+
+.header-buttons button {
+    padding: 12px 25px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: var(--color-1);
+    background-color: var(--color-5);
+
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.header-buttons button:hover {
+    background-color: var(--color-3);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ================== CONTENIDO HEADER ================== */
+.header-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.header-txt {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ================== TITULO EFECTO AGUA ================== */
+.header-txt h1 {
+    font-size: 60px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    text-align: center;
+    white-space: nowrap; /* EVITA EFECTO ESCALERA */
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #eaeaea,
+        #ffffff
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: agua 3s linear infinite;
+}
+
+/* ================== ANIMACIÓN AGUA ================== */
+@keyframes agua {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* ================== TEXTO SECUNDARIO ================== */
+.header-txt p {
+    margin-top: 25px;
+    font-size: 22px;
+    color: var(--color-2);
+}
+
+/* ================== SECCIÓN POPULAR ================== */
+.popular {
+    padding: 100px 0;
+    text-align: center;
+}
+
+h2 {
+    color: var(--color-5);
+    font-size: 35px;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+}
+
+.popular-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popular-content img {
+    width: 150px;
+}
+
+/* ================== PRODUCTOS ================== */
+.product-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.producto-1 {
+    background-color: var(--color-3);
+    border-radius: 15px;
+}
+
+.product-txt {
+    padding: 50px 30px;
+    color: white;
+}
+
+/* ============================= */
+/* TABLETS (max 1024px) */
+/* ============================= */
+@media (max-width: 1024px){
+
+    .inicio h1,
+    .contacto h1{
+        font-size: 40px;
+    }
+
+    .descripcion,
+    .texto-contacto{
+        font-size: 16px;
+    }
+
+    .logo-jams img{
+        width: 220px;
+    }
+
+    .grid-productos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .carrito{
+        width: 280px;
+    }
+}
+
+/* ============================= */
+/* CELULARES (max 768px) */
+/* ============================= */
+@media (max-width: 768px){
+
+    .inicio,
+    .contacto{
+        padding: 30px 15px;
+    }
+
+    .inicio h1,
+    .contacto h1{
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .descripcion,
+    .texto-contacto{
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .logo-jams img{
+        width: 180px;
+        margin-bottom: 20px;
+    }
+
+    .botones-inicio,
+    .botones-contacto{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-principal,
+    .btn-secundario,
+    .btn-instagram{
+        width: 100%;
+        text-align: center;
+    }
+
+    .grid-productos{
+        grid-template-columns: 1fr;
+    }
+
+    .icono-carrito{
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+
+    .carrito{
+        right: 10px;
+        width: 90%;
+    }
+}

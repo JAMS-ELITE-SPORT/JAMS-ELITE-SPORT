@@ -1,0 +1,340 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    background: radial-gradient(circle at top, #2b1a00, #000);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+}
+
+.subtitulo-descuento {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.header p {
+    color: #d4af37;
+    margin-top: 6px;
+}
+
+.nav-botones {
+    margin-top: 18px;
+}
+
+.btn-nav {
+    text-decoration: none;
+    color: #000;
+    background: #d4af37;
+    padding: 8px 20px;
+    margin: 0 5px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+.contenedor {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+}
+
+/* =========================
+   PRODUCTOS
+========================= */
+.productos {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.producto {
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    transition: transform .3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   IMAGEN PRODUCTO
+========================= */
+.img-producto {
+    width: 100%;
+    height: 220px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.img-producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: .4s;
+}
+
+.producto:hover .img-producto img {
+    transform: scale(1.08);
+}
+
+/* =========================
+   TEXTO PRODUCTO
+========================= */
+.producto h3 {
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+}
+
+.precio {
+    color: #d4af37;
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+/* =========================
+   SELECTORES
+========================= */
+.selectores {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.producto select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(212,175,55,.5);
+    background: #111;
+    color: #fff;
+    font-size: .85rem;
+    cursor: pointer;
+}
+
+.producto select:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+/* =========================
+   BOTÓN AGREGAR
+========================= */
+.producto button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #d4af37;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.producto button:hover {
+    background: #f1cf5a;
+}
+
+/* =========================
+   CARRITO LATERAL
+========================= */
+.carrito {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 340px;
+    height: 100vh;
+    background: linear-gradient(180deg, #2b1a00, #000);
+    border-left: 1px solid rgba(212,175,55,.4);
+    padding: 25px;
+    transition: .4s;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.carrito.activo {
+    right: 0;
+}
+
+.carrito h2 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: .9rem;
+    color: #d4af37;
+    margin-bottom: 18px;
+}
+
+#listaCarrito p {
+    font-size: .9rem;
+    margin-bottom: 6px;
+}
+
+/* =========================
+   TOTAL
+========================= */
+.total {
+    font-weight: bold;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* =========================
+   MÉTODOS DE PAGO
+========================= */
+.metodos-pago {
+    margin-top: 20px;
+}
+
+.metodos-pago button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-instagram {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+    color: #fff;
+}
+
+.btn-hsbc {
+    background: #e41c2d;
+    color: #fff;
+}
+
+.btn-oxxo {
+    background: #f15a24;
+    color: #fff;
+}
+
+/* =========================
+   FORMULARIO PAGO
+========================= */
+#formularioPago {
+    margin-top: 15px;
+    background: rgba(0,0,0,.6);
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(212,175,55,.3);
+}
+
+#formularioPago h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#formularioPago input {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* =========================
+   BOTÓN VACIAR
+========================= */
+.vaciar {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background: #8b0000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* =========================
+   ICONO CARRITO
+========================= */
+.icono-carrito {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #d4af37;
+    color: #000;
+    font-size: 1.6rem;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* =========================
+   UTILIDADES
+========================= */
+.oculto {
+    display: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .contenedor {
+        padding: 15px;
+    }
+
+    .productos {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .img-producto {
+        height: 170px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+}

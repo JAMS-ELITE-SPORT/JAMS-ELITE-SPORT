@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>JAMS Elite Sport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="productos.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>JAMS ELITE SPORT</h1>
+    <h2 class="subtitulo">
+        En compra de 3 productos o más se aplica un descuento del 10%
+    </h2>
+    <p>Ropa deportiva · Stock limitado</p>
+
+    <div class="nav-botones">
+        <a href="inicio.html" class="btn-nav">Inicio</a>
+        <a href="contacto.html" class="btn-nav">Contacto</a>
+    </div>
+</header>
+
+<main class="contenedor">
+
+    <!-- ================= PRODUCTOS ================= -->
+    <section class="productos">
+
+        <!-- PRODUCTO 1 -->
+        <div class="producto">
+            <div class="img-producto">
+                <img src="img/licra1 (1).jpeg" alt="Licra Deportiva">
+            </div>
+
+            <h3>Licra Deportiva</h3>
+            <p class="precio">$180 MXN</p>
+
+            <select id="talla-licra-1">
+                <option value="">Selecciona talla</option>
+                <option>XS</option>
+                <option>CH</option>
+                <option>M</option>
+                <option>G</option>
+            </select>
+
+            <select id="color-licra-1">
+                <option value="">Selecciona color</option>
+                <option>Negro</option>
+                <option>Blanco</option>
+                <option>Azul rey</option>
+                <option>Azul marino</option>
+                <option>Rojo vino</option>
+            </select>
+
+            <button onclick="agregarCarrito('Licra Deportiva','talla-licra-1','color-licra-1',180)">
+                Agregar al carrito
+            </button>
+        </div>
+
+        <!-- PRODUCTO 2 -->
+        <div class="producto">
+            <div class="img-producto">
+                <img src="img/licra2.jpeg" alt="Licra Deportiva Premium">
+            </div>
+
+            <h3>Licra Deportiva Premium</h3>
+            <p class="precio">$180 MXN</p>
+
+            <select id="talla-licra-2">
+                <option value="">Selecciona talla</option>
+                <option>XS</option>
+                <option>CH</option>
+                <option>M</option>
+                <option>G</option>
+            </select>
+
+            <select id="color-licra-2">
+                <option value="">Selecciona color</option>
+                <option>Negro</option>
+                <option>Blanco</option>
+                <option>Azul rey</option>
+                <option>Azul marino</option>
+                <option>Rojo vino</option>
+            </select>
+
+            <button onclick="agregarCarrito('Licra Deportiva Premium','talla-licra-2','color-licra-2',180)">
+                Agregar al carrito
+            </button>
+        </div>
+
+        <!-- PRODUCTO 3 -->
+        <div class="producto">
+            <div class="img-producto">
+                <img src="img/topp.jpeg" alt="Top Deportivo">
+            </div>
+
+            <h3>Top Deportivo</h3>
+            <p class="precio">$240 MXN</p>
+
+            <select id="talla-top-1">
+                <option value="">Selecciona talla</option>
+                <option>XS</option>
+                <option>CH</option>
+                <option>M</option>
+                <option>G</option>
+            </select>
+
+            <select id="color-top-1">
+                <option value="">Selecciona color</option>
+                <option>Negro</option>
+                <option>Blanco</option>
+                <option>Azul rey</option>
+                <option>Azul marino</option>
+                <option>Rojo vino</option>
+            </select>
+
+            <button onclick="agregarCarrito('Top Deportivo','talla-top-1','color-top-1',240)">
+                Agregar al carrito
+            </button>
+        </div>
+
+        <!-- PRODUCTO 4 -->
+        <div class="producto">
+            <div class="img-producto">
+                <img src="img/topp2.jpeg" alt="Top Deportivo Elite">
+            </div>
+
+            <h3>Top Deportivo Elite</h3>
+            <p class="precio">$240 MXN</p>
+
+            <select id="talla-top-2">
+                <option value="">Selecciona talla</option>
+                <option>XS</option>
+                <option>CH</option>
+                <option>M</option>
+                <option>G</option>
+            </select>
+
+            <select id="color-top-2">
+                <option value="">Selecciona color</option>
+                <option>Negro</option>
+                <option>Blanco</option>
+                <option>Azul rey</option>
+                <option>Azul marino</option>
+                <option>Rojo vino</option>
+            </select>
+
+            <button onclick="agregarCarrito('Top Deportivo Elite','talla-top-2','color-top-2',240)">
+                Agregar al carrito
+            </button>
+        </div>
+
+    </section>
+
+    <!-- ================= CARRITO ================= -->
+    <aside class="carrito" id="carrito">
+        <h2>Carrito</h2>
+
+        <ul id="listaCarrito">
+            <li class="vacio">No hay productos aún</li>
+        </ul>
+
+        <p class="total">
+            Total: $<span id="total">0</span> MXN
+        </p>
+
+        <!-- MÉTODOS DE PAGO -->
+        <div class="metodos-pago oculto" id="metodosPago">
+            <h3>Método de pago</h3>
+
+            <button class="btn-instagram" onclick="pagarInstagram()">
+                Pagar por Instagram
+            </button>
+
+            <button class="btn-hsbc" onclick="mostrarFormulario('hsbc')">
+                Depósito / Transferencia HSBC
+            </button>
+
+            <button class="btn-oxxo" onclick="mostrarFormulario('oxxo')">
+                Depósito en OXXO
+            </button>
+        </div>
+
+        <!-- FORMULARIO -->
+        <div class="oculto" id="formularioPago">
+            <h3>Datos del comprador</h3>
+
+            <input type="text" id="nombre" placeholder="Nombre completo">
+            <input type="text" id="whatsapp" placeholder="WhatsApp">
+            <input type="email" id="correo" placeholder="Correo electrónico">
+
+            <button onclick="finalizarPago()">Continuar</button>
+        </div>
+
+        <button class="vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+    </aside>
+
+</main>
+
+<!-- ICONO CARRITO -->
+<div class="icono-carrito" onclick="toggleCarrito()">🛒</div>
+
+<script src="carrito.js"></script>
+</body>
+</html>
