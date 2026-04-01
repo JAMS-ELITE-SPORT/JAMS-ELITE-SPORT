@@ -1,0 +1,147 @@
+/* =========================
+   RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body{
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* =========================
+   HEADER PREMIUM
+========================= */
+.header{
+    position:relative;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    background:linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.9)
+    ),
+    url('img/2do\ logotipo.jpg'); /* puedes cambiar imagen */
+    background-size:cover;
+    background-position:center;
+}
+
+/* capa oscura */
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+/* =========================
+   TEXTO
+========================= */
+.titulo{
+    font-size:3rem;
+    letter-spacing:4px;
+    animation:fadeUp 1s ease;
+}
+
+/* JAMS en gris oscuro premium */
+.jams{
+    color:#aaa;
+}
+
+/* frase dorada */
+.frase{
+    margin-top:15px;
+    font-size:1.2rem;
+    color:#d4af37;
+    animation:fadeUp 1.4s ease;
+}
+
+/* =========================
+   BOTONES PREMIUM
+========================= */
+.header-buttons{
+    position:absolute;
+    bottom:50px; /* los sube */
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.boton{
+    padding:12px 30px;
+    border-radius:30px;
+    border:none;
+    background:#d4af37; /* dorado fuerte */
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.boton:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 15px #d4af37;
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* TABLET */
+@media (max-width:1024px){
+    .titulo{
+        font-size:2.2rem;
+    }
+}
+
+/* CELULAR */
+@media (max-width:768px){
+
+    .header{
+        height:80vh;
+        padding:20px;
+    }
+
+    .titulo{
+        font-size:1.6rem;
+    }
+
+    .frase{
+        font-size:1rem;
+    }
+
+    .header-buttons{
+        flex-direction:column;
+        align-items:center;
+        margin-top:-40px;
+    }
+
+    .boton{
+        width:90%;
+    }
+}
