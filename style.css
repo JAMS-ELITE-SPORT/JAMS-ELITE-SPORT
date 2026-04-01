@@ -32,7 +32,7 @@ body{
         rgba(0,0,0,0.7),
         rgba(0,0,0,0.9)
     ),
-    url('img/2do\ logotipo.jpg'); /* puedes cambiar imagen */
+    url('img/2dologotipo.jpg'); /* puedes cambiar imagen */
     background-size:cover;
     background-position:center;
 }
